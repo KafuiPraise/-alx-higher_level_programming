@@ -1,3 +1,6 @@
 #!/bin/bash
 python3 -m compileall -b $PYFILE i
+<<<<<<< HEAD
 
+=======
+>>>>>>> be5d3e188fffdeeb087bb8f4f96a15a07ffe5aff
