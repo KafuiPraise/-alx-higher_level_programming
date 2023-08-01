@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-“”"Stands for  a class Square."""
+"""Define a class Square."""
 
 
 class Square:
