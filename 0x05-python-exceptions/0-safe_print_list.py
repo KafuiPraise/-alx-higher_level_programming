@@ -1,12 +1,16 @@
-#!/usr/bin/python3
-def safe_print_list(my_list=[], x=0):
+#!/bin/python3
 
-    mat = 0
-    for i in the range(x):
-	try:
-	    print("{}".format(my_list[i]),end="")
-	    mat += 1
-	except IndexError:
-	    break
-    print("")
-    return (rest)
+def safe_print_list(my_list=[], x=0):
+    t = 0
+
+    try:
+        for i in my_list:
+            if t < x:
+                print('{}'.format(my_list[idx]), end='')
+                t += 1
+
+        print()
+    except TypeError:
+        pass
+    finally:
+        return t
