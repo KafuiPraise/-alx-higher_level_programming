@@ -1,0 +1,141 @@
+Last login: Sat Aug  5 23:01:53 on ttys001
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+Matildas-MacBook-Pro:~ matilda$ vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Checking if box 'ubuntu/focal64' version '20230731.0.0' is up to date...
+==> default: A newer version of the box 'ubuntu/focal64' for provider 'virtualbox' is
+==> default: available! You currently have version '20230731.0.0'. The latest is version
+==> default: '20230803.0.0'. Run `vagrant box update` to update.
+==> default: Machine already provisioned. Run `vagrant provision` or use the `--provision`
+==> default: flag to force provisioning. Provisioners marked to run always will still run.
+Matildas-MacBook-Pro:~ matilda$ ls
+ALX Projects			Pictures
+Applications			Praise
+Creative Cloud Files		Projects
+Desktop				Public
+Documents			Python_projects
+Downloads			Vagrant
+Dropbox				Vagrantfile
+Kafui				VirtualBox VMs
+KafuiPraise			alx-higher_level_programming
+Library				nii_ayi
+Movies				venv
+Music
+Matildas-MacBook-Pro:~ matilda$ vagrant ssh
+Welcome to Ubuntu 22.04.2 LTS (GNU/Linux 5.15.0-78-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Sun Aug  6 06:19:38 UTC 2023
+
+  System load:  0.0               Processes:               105
+  Usage of /:   8.1% of 38.70GB   Users logged in:         0
+  Memory usage: 23%               IPv4 address for enp0s3: 10.0.2.15
+  Swap usage:   0%
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+Expanded Security Maintenance for Applications is not enabled.
+
+8 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Sat Aug  5 17:45:46 2023 from 10.0.2.2
+vagrant@ubuntu-focal:~$ 
+vagrant@ubuntu-focal:~$ ls
+Python_projects  alx-higher_level_programming
+vagrant@ubuntu-focal:~$ ls
+Python_projects  alx-higher_level_programming
+vagrant@ubuntu-focal:~$ cd alx-higher_level_programming/
+vagrant@ubuntu-focal:~/alx-higher_level_programming$ ls
+0x00-python-hello_world              0x04-python-more_data_structures
+0x01-python-if_else_loops_functions  0x05-python-exceptions
+0x02-python-import_modules           0x06-python-classes
+0x03-python-data_structures          0x07-python-test_driven_development
+vagrant@ubuntu-focal:~/alx-higher_level_programming$ cd 0x07-python-test_driven_development/
+vagrant@ubuntu-focal:~/alx-higher_level_programming/0x07-python-test_driven_development$ ls
+0-add_integer.py  100-matrix_mul.py  101-lazy_matrix_mul.py  102-python.c  2-matrix_divided.py  3-say_my_name.py  4-print_square.py  5-text_indentation.py  README.md  tests
+vagrant@ubuntu-focal:~/alx-higher_level_programming/0x07-python-test_driven_development$ cd tests
+vagrant@ubuntu-focal:~/alx-higher_level_programming/0x07-python-test_driven_development/tests$ ls
+'()'   0-add_integer.txt   100-matrix_mul.txt   101-lazy_matrix_mul.txt   2-matrix_divided.txt   3-say_my_name.txt   4-print_square.txt   5-text_indentation.txt   6-max_integer_test.py
+vagrant@ubuntu-focal:~/alx-higher_level_programming/0x07-python-test_driven_development/tests$ vi '()'
+vagrant@ubuntu-focal:~/alx-higher_level_programming/0x07-python-test_driven_development/tests$ vi 2-matrix_divided.txt
+vagrant@ubuntu-focal:~/alx-higher_level_programming/0x07-python-test_driven_development/tests$ vi '()'
+
+
+
+
+
+    >>> print(matrix_divided(matrix, 3))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+The same TypeError is raised yet again if any elements in ``matrix`` are
+neither ints nor floats.
+
+::
+
+    >>> matrix = [
+    ...     [1, 2, 3],
+    ...     [4, "not a number", 6]
+    ... ]
+    >>> print(matrix_divided(matrix, 3))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+Finally, all the rows in ``matrix`` must be the same size. If any rows are
+of different sizes, a new TypeError is raised.
+
+::
+
+    >>> matrix = [
+    ...     [1, 2, 3, 4],
+    ...     [5, 6, 7]
+    ... ]
+    >>> print(matrix_divided(matrix, 3))
+    Traceback (most recent call last):
+    TypeError: Each row of the matrix must have the same size
+
+Invalid Divisors
+================
+
+The parameter ``div`` must be either an int or float. Otherwise, a TypeError
+is raised.
+
+::
+
+    >>> matrix = [
+    ...     [1, 2, 3],
+    ...     [4, 5, 6]
+    ... ]
+    >>> print(matrix_divided(matrix, "not a number"))
+    Traceback (most recent call last):
+    TypeError: div must be a number
+
+::
+
+    >>> print(matrix_divided(matrix, None))
+    Traceback (most recent call last):
+    TypeError: div must be a number
+
+``div`` must also be non-zero. Otherwise, a ZeroDivisionError is raised.
+
+::
+
+    >>> print(matrix_divided(matrix, 0))
+    Traceback (most recent call last):
+    ZeroDivisionError: division by zero
+                                                                                                                                                                                          165,1          

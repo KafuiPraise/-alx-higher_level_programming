@@ -1,24 +1,12 @@
 #!/usr/bin/python3
-"""
-
-A function that adds 2 integers
-Must be first casted to integers if they are float
-Prints the sum to the stdout
-
-"""
+"""Function that adds 2 integer.s"""
 
 
 def add_integer(a, b=98):
-    """adds the sum of two  numbers
-
-     Performs the addition between two numbers.
-
-    Args:
-        a (:obj:`int, float`): The first number.
-        b (:obj:`int, float`, optional): The second number.
-
-    Returns:
-        int: The result of the addition.
+    """adds the sum of two numbers
+    float argument are typecasted to an ints before addition is done.
+    Raises:
+        TypError: if either a or b is a non-integer and non-float.
     """
 
     if ((not isinstance(a, int) and not isinstance(a, float))):
