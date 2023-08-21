@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Provides unittest for the 'Rectangle' class provided by the 'models' module
+"""Gives unittest for the 'Rectangle' class provided by the 'models' module
 """
 
 import unittest
@@ -17,17 +17,17 @@ class RectangleTest(unittest.TestCase):
     """Class Rectangle unittests"""
 
     def setUp(self):
-        """Create a temporary directory and Base instance
+        """Makes a temporary directory and Base instance
         """
         chdir(mkdtemp())
 
     def tearDown(self):
-        """Remove temporary files and directories
+        """Eliminate temporary files and directories
         """
         rmtree(getcwd(), ignore_errors=True)
 
     def test_check_id(self):
-        """Test if id of Rectangle increments"""
+        """Testing if id of Rectangle increments"""
         r1 = Rectangle(2, 10)
         r2 = Rectangle(2, 10)
         r3 = Rectangle(2, 10)
@@ -35,12 +35,12 @@ class RectangleTest(unittest.TestCase):
         self.assertGreater(r3.id, r2.id)
 
     def test_check_input_id(self):
-        """Test if input id gets set"""
+        """Testing if input id gets set"""
         r3 = Rectangle(10, 2, 0, 0, 12)
         self.assertEqual(r3.id, 12)
 
     def test_check_width(self):
-        """Test width set of rectangle"""
+        """Testing width set of rectangle"""
         r1 = Rectangle(10, 2)
         self.assertEqual(r1.width, 10)
 
@@ -51,7 +51,7 @@ class RectangleTest(unittest.TestCase):
         self.assertEqual(r3.width, 5)
 
     def test_check_width_TypeError_01(self):
-        """Test TypeError for width in Rectangle"""
+        """Testing TypeError for width in Rectangle"""
         self.assertRaisesRegex(
             TypeError,
             'width must be an integer',
@@ -60,7 +60,7 @@ class RectangleTest(unittest.TestCase):
         )
 
     def test_check_width_TypeError_02(self):
-        """Test TypeError for width in Rectangle"""
+        """Testing TypeError for width in Rectangle"""
         self.assertRaisesRegex(
             TypeError,
             'width must be an integer',
@@ -69,7 +69,7 @@ class RectangleTest(unittest.TestCase):
         )
 
     def test_check_width_ValueError(self):
-        """Test TypeError for width in Rectangle"""
+        """Testing TypeError for width in Rectangle"""
         self.assertRaisesRegex(
             ValueError,
             'width must be > 0',
@@ -78,7 +78,7 @@ class RectangleTest(unittest.TestCase):
         )
 
     def test_check_height(self):
-        """Test height of """
+        """Testing height of """
         r1 = Rectangle(10, 2)
         self.assertEqual(r1.height, 2)
 
@@ -89,7 +89,7 @@ class RectangleTest(unittest.TestCase):
         self.assertEqual(r3.height, 3)
 
     def test_check_height_TypeError_01(self):
-        """Test TypeError for height in Rectangle"""
+        """Testing TypeError for height in Rectangle"""
         self.assertRaisesRegex(
             TypeError,
             'height must be an integer',
@@ -98,7 +98,7 @@ class RectangleTest(unittest.TestCase):
         )
 
     def test_check_height_TypeError_02(self):
-        """Test TypeError for height in Rectangle"""
+        """Testing TypeError for height in Rectangle"""
         self.assertRaisesRegex(
             TypeError,
             'height must be an integer',
@@ -107,7 +107,7 @@ class RectangleTest(unittest.TestCase):
         )
 
     def test_check_height_ValueError(self):
-        """Test TypeError for height in Rectangle"""
+        """Testing TypeError for height in Rectangle"""
         self.assertRaisesRegex(
             ValueError,
             'height must be > 0',
@@ -116,7 +116,7 @@ class RectangleTest(unittest.TestCase):
         )
 
     def test_check_x(self):
-        """Test x of rectangle"""
+        """Testing x of rectangle"""
         r1 = Rectangle(10, 2)
         self.assertEqual(r1.x, 0)
 
@@ -130,7 +130,7 @@ class RectangleTest(unittest.TestCase):
         self.assertEqual(r4.x, 0)
 
     def test_check_x_TypeError_01(self):
-        """Test TypeError for x in Rectangle"""
+        """Testing TypeError for x in Rectangle"""
         self.assertRaisesRegex(
             TypeError,
             'x must be an integer',
@@ -139,7 +139,7 @@ class RectangleTest(unittest.TestCase):
         )
 
     def test_check_x_TypeError_02(self):
-        """Test TypeError for x in Rectangle"""
+        """Testing TypeError for x in Rectangle"""
         self.assertRaisesRegex(
             TypeError,
             'x must be an integer',
@@ -148,7 +148,7 @@ class RectangleTest(unittest.TestCase):
         )
 
     def test_check_x_ValueError(self):
-        """Test ValueError for x in Rectangle"""
+        """Testing  ValueError for x in Rectangle"""
         self.assertRaisesRegex(
             ValueError,
             'x must be >= 0',
@@ -157,7 +157,7 @@ class RectangleTest(unittest.TestCase):
         )
 
     def test_check_y(self):
-        """Test y of rectangle"""
+        """Testing y of rectangle"""
         r1 = Rectangle(10, 2)
         self.assertEqual(r1.y, 0)
 
@@ -171,7 +171,7 @@ class RectangleTest(unittest.TestCase):
         self.assertEqual(r4.y, 0)
 
     def test_check_y_TypeError_01(self):
-        """Test TypeError for y in Rectangle"""
+        """Testing TypeError for y in Rectangle"""
         self.assertRaisesRegex(
             TypeError,
             'y must be an integer',
@@ -180,7 +180,7 @@ class RectangleTest(unittest.TestCase):
         )
 
     def test_check_y_TypeError_02(self):
-        """Test TypeError for y in Rectangle"""
+        """Testing TypeError for y in Rectangle"""
         self.assertRaisesRegex(
             TypeError,
             'y must be an integer',
@@ -189,7 +189,7 @@ class RectangleTest(unittest.TestCase):
         )
 
     def test_check_y_TypeError_(self):
-        """Test TypeError for y in Rectangle"""
+        """Testing TypeError for y in Rectangle"""
         self.assertRaisesRegex(
             ValueError,
             'y must be >= 0',
@@ -198,7 +198,7 @@ class RectangleTest(unittest.TestCase):
         )
 
     def test_update(self):
-        """Test update"""
+        """Testing update"""
         output = StringIO()
         sys.stdout = output
         r1 = Rectangle(10, 10, 10, 10)

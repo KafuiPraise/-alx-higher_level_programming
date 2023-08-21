@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Provides a base class for all other classes in this module
+"""Gives a base class for all classes in this module
 """
 
 import json
@@ -7,14 +7,14 @@ import turtle
 
 
 class Base():
-    """Base class for all other classes in this module
+    """The parent class of all other classes in this module.
     """
     HEADERS = ('id',)
 
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """Instantiate a base object
+        """Create a new instance of a base class.
         """
         if id is None:
             self.__class__.__nb_objects += 1
@@ -24,7 +24,7 @@ class Base():
 
     @staticmethod
     def draw(list_rectangles, list_squares):
-        """Draw rectangles and squares in a new window
+        """Create a new window and draw rectangles and squares in it.
         """
         shapes = []
         if list_rectangles:
@@ -48,7 +48,7 @@ class Base():
 
     @staticmethod
     def from_json_string(json_string):
-        """Return the list defined by a JSON string
+        """Return list defined by a JSON string
         """
         if json_string is None:
             return []
@@ -56,7 +56,7 @@ class Base():
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """Return a JSON representation a list of dictionaries
+        """Return a JSON output of a list of dictionaries
         """
         if list_dictionaries is None:
             return '[]'
@@ -99,7 +99,7 @@ class Base():
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
-        """Save a CSV representation of list_objs to <class-name>.json
+        """Save a CSV output of list_objs to <class-name>.json
         """
         with open("{}.csv".format(cls.__name__), 'w') as ofile:
             if list_objs:
@@ -125,7 +125,7 @@ class Base():
         return obj
 
     def update(self, *args, **kwargs):
-        """Update the attributes of a base object
+        """Update the attributes of the base object
         """
         if args:
             for pair in zip(self.HEADERS, args):

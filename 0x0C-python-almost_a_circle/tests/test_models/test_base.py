@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-""" Module for testing Base class """
-
+"""Base class testing module"""
 import unittest
 import json
 from os import chdir, getcwd, remove
@@ -11,32 +10,32 @@ from models.base import Base
 
 
 class TestBase(unittest.TestCase):
-    """Test base model methods
+    """Base model test methods
     """
     def setUp(self):
-        """Create a temporary directory and Base instance
+        """Creates a temporary directory and Base instance
         """
         self.base = Base()
         chdir(mkdtemp())
 
     def tearDown(self):
-        """Remove temporary files and directories
+        """Elimination of temporary files and directories
         """
         rmtree(getcwd(), ignore_errors=True)
 
     def test_base(self):
-        """Test the __init__ method
+        """Test  __init__ method
         """
         self.assertIsInstance(self.base, Base)
 
     def test_base_id(self):
-        """Test the __init__ method
+        """Test  __init__ method
         """
         self.assertIsInstance(self.base.id, int)
         self.assertGreater(self.base.id, 0)
 
     def test_init_type(self):
-        """Test the __init__ method
+        """Test __init__ method
         """
         types = (int, float, str, tuple, list, dict, set, bool)
         self.assertIsInstance(Base(), Base)
@@ -45,7 +44,7 @@ class TestBase(unittest.TestCase):
             self.assertIsInstance(Base(id=value), Base)
 
     def test_init_id_equality(self):
-        """Test the __init__ method
+        """Test __init__ method
         """
         types = (int, float, str, tuple, list, dict, set, bool)
         self.assertNotEqual(self.base.id, Base().id)
@@ -55,18 +54,18 @@ class TestBase(unittest.TestCase):
             self.assertEqual(Base(id=value).id, value)
 
     def test_init_id_identity(self):
-        """Test the __init__ method
+        """Test __init__ method
         """
         self.assertIs(Base(id=type).id, type)
 
     def test_init_id_type(self):
-        """Test the __init__ method
+        """Test __init__ method
         """
         self.assertIsInstance(Base().id, int)
         self.assertIsInstance(Base(id=None).id, int)
 
     def test_init_raises(self):
-        """Test the __init__ method
+        """Test __init__ method
         """
         self.assertRaisesRegex(
             TypeError,
@@ -75,7 +74,7 @@ class TestBase(unittest.TestCase):
         )
 
     def test_create_type(self):
-        """Test the create method
+        """Test create method
         """
         types = (int, float, str, tuple, list, dict, set, bool)
         self.assertIsInstance(Base.create(), Base)
@@ -83,7 +82,7 @@ class TestBase(unittest.TestCase):
             self.assertIsInstance(Base.create(id=value), Base)
 
     def test_create_id_equality(self):
-        """Test the create method
+        """Test create method
         """
         types = (int, float, str, tuple, list, dict, set, bool)
         self.assertNotEqual(self.base.id, Base.create().id)
@@ -91,18 +90,18 @@ class TestBase(unittest.TestCase):
             self.assertEqual(Base.create(id=value).id, value)
 
     def test_create_id_identity(self):
-        """Test the create method
+        """Test create method
         """
         self.assertIsNone(Base.create(id=None).id)
         self.assertIs(Base.create(id=type).id, type)
 
     def test_create_id_type(self):
-        """Test the create method
+        """Test create method
         """
         self.assertIsInstance(Base.create().id, int)
 
     def test_create_raises(self):
-        """Test the create method
+        """Test create method
         """
         self.assertRaisesRegex(
             TypeError,
@@ -111,7 +110,7 @@ class TestBase(unittest.TestCase):
         )
 
     def test_to_json_string_equality(self):
-        """Test the to_json_string method
+        """Test to_json_string method
         """
         types = (int, float, str, tuple, list, dict, bool)
         lists = ([{'a': 1}], [{'a': 1}, {'a': 2, 'b': 3}])
@@ -123,7 +122,7 @@ class TestBase(unittest.TestCase):
             self.assertEqual(Base.to_json_string(value), json.dumps(value))
 
     def test_save_to_file(self):
-        """Test the save_to_file method
+        """Test save_to_file method
         """
         types = (int, float, str, tuple, list, dict, bool)
         bases = [self.base] + [Base(id=t()) for t in types]

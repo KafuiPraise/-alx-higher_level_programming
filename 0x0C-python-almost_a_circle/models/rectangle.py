@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-"""Provides a class to represent a rectangle
+"""Gives a class to represent a rectangle
 """
 
 from models.base import Base
 
 
 class Rectangle(Base):
-    """Representation of a rectangle
+    """Output  of a rectangle
     """
     HEADERS = ('id', 'width', 'height', 'x', 'y')
 
@@ -20,7 +20,7 @@ class Rectangle(Base):
         self.y = y
 
     def __str__(self):
-        """Get a string representation of a rectangle
+        """Get a string output of a rectangle
         """
         return "[{type}] ({id}) {x}/{y} - {width}/{height}".format(
             type=self.__class__.__name__,
@@ -33,13 +33,13 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """Get private instance attribute 'width'
+        """Get a private instance attribute 'width'
         """
         return self.__width
 
     @width.setter
     def width(self, width):
-        """Set private instance attribute 'width'
+        """Set a private instance attribute 'width'
         """
         if not isinstance(width, int):
             raise TypeError("width must be an integer")
@@ -49,7 +49,7 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        """Get private instance attribute 'height'
+        """Get a private instance attribute 'height'
         """
         return self.__height
 
@@ -65,13 +65,13 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """Get private instance attribute 'x'
+        """Get a private instance attribute 'x'
         """
         return self.__x
 
     @x.setter
     def x(self, x):
-        """Set private instance attribute 'x'
+        """Set a private instance attribute 'x'
         """
         if not isinstance(x, int):
             raise TypeError("x must be an integer")
