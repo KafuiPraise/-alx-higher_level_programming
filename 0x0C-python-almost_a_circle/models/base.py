@@ -58,7 +58,7 @@ class Base():
     def to_json_string(list_dictionaries):
         """Return a JSON output of a list of dictionaries
         """
-        if list_dictionaries is None:
+        if list_dictionaries is None or list_dictionaries == "[]":
             return '[]'
         return json.dumps(list_dictionaries)
 
