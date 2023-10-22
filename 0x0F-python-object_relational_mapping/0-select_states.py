@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-""" List states in module """
+""" Module lists all states from database"""
 
-import MySQLdb
 import sys
+import MySQLdb
 
 
 def main():
