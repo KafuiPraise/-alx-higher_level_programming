@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-A script that 
-Accepts a web address (URL) as input
+A python script that accepts a web address (URL) as input
 Sends a POST request to the provided URL
 Requires an email address as a parameter
 Shows the content of the response received from the request
